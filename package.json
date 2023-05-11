@@ -1,0 +1,30 @@
+{
+  "name": "proshop-v2",
+  "version": "2.0.0",
+  "description": "eCommerce application built with the MERN stack",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Faeezh/proshop-demo.git"
+  },
+  "author": "Faeez Hartley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Faeezh/proshop-demo/issues"
+  },
+  "homepage": "https://github.com/Faeezh/proshop-demo#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "nodemon": "^2.0.22"
+  }
+}
