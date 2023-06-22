@@ -13,9 +13,6 @@ function App() {
           <Outlet />
         </Container>
       </main>
-      <h1>Test 11 05 2023</h1>
-      <h1>Test More Code 11 05 2023</h1>
-      <h1>Connection string   mongodb+srv://faeezhartley:faeezhartley@cluster0.f4dnydd.mongodb.net/proshop </h1>
       <Footer />
     </>
   );
