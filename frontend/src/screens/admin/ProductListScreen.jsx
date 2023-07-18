@@ -17,8 +17,18 @@ const ProductListScreen = () => {
 
     const [createProduct, { isLoading: loadingCreate }] = useCreateProductMutation();
 
-    const deleteHandler = (id) => {
-      console.log('delete', id);
+    const [deleteProduct, { isLoading: loadingDelete }] = useDeleteProductMutation();
+
+    const deleteHandler = async (id) => {
+      if (window.confirm('Are you sure ?')) {
+        try {
+          await deleteProduct(id);
+          toast.success('Product delete');
+          refetch();
+        } catch (err) {
+          toast.error(err?.data?.message || err.error);
+        }
+      }
     };
 
     const createProductHandler = async () => {
@@ -46,6 +56,7 @@ const ProductListScreen = () => {
        </Row>
 
       {loadingCreate && <Loader />}
+      {loadingDelete && <Loader />}
       {isLoading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : (
         <>
           <Table striped hover responsive className='table-sm'>
