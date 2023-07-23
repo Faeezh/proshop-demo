@@ -93,7 +93,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     
       if (product) {
         const alreadyReviewed = product.reviews.find(
-          (r) => r.user.toString() === req.user._id.toString()
+          (reviw) => review.user.toString() === req.user._id.toString()
         );
     
         if (alreadyReviewed) {
@@ -141,5 +141,6 @@ export {
    getProductById,
    createProduct, 
    updateProduct, 
-   deleteProduct 
+   deleteProduct ,
+   createProductReview,
   };
