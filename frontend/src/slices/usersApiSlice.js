@@ -44,8 +44,8 @@ export const userApiSlice = apiSlice.injectEndpoints({
       }),
     }),
     getUserDetails: builder.query({
-      query: (id) => ({
-        url: `${USERS_URL}/${id}`,
+      query: (userId) => ({//id
+        url: `${USERS_URL}/${userId}`,//id
       }),
       keepUnusedDataFor: 5,
     }),
@@ -55,7 +55,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
         method: 'PUT',
         body: data,
       }),
-      invalidatesTags: ['User'],
+      invalidatesTags: ['Users'],
     }),
   }),
 });
